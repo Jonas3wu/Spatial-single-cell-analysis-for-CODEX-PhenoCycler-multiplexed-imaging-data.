@@ -13,6 +13,11 @@ Containerized run (Docker → Singularity → Jupyter): built a CPU Docker image
 
 Pipeline flow: segmentation → preprocessing/normalization → clustering/annotation → spatial overlays.
 
+Fixed the pipeline crash when the input data changes slightly: Handled tutorial/output drift (e.g., label as index vs column), added stable cell_id, fixed NaN-driven plotting issues, and auto-generated scalable cell-type color palettes.
+
+Optimized Clustering: Fine-tuned the Leiden algorithm to find the "sweet spot" of cell-type granularity while keeping it efficient for CPU processing.
+
+
 # example of what my analysis found: 
 CD20⁺CXCR5⁺ B cells increased from ~12.5% of total B cells in healthy tonsil to ~67% in tonsillitis.
 
